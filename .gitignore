@@ -1,2 +1,3 @@
 Settings.py
-FastAPI/
+.idea
+.ipynb_checkpoints
