@@ -46,6 +46,9 @@ class Parent:
 class Movies(Parent):
     table_name = 'movies'
 
+class Games(Parent):
+    table_name = 'games'
+
 
 # movie = Movies('Tokyo Story')
 # print(movie.get_item_by_title())
