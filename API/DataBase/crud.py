@@ -9,15 +9,19 @@ class Parent:
     def __init__(self, title):
         self.title = title
 
-    def get_item_by_title(self):
+    def get_item_by_title(self,columns = '*'):
         self.validate()
         dct = {}
         with self.db.connect() as conn:
-            query = f"SELECT * FROM {self.table_name} WHERE title = '{self.title}';"
+            query = f"SELECT {columns} FROM {self.table_name} WHERE title = '{self.title}';"
             result = conn.execute(text(query))
             for i in result:
-                for j,jj in zip(['title', 'score', "date", 'summary', 'Atmosphere', 'Tags', 'RecommendationsGame', 'RecommendationsBook'],i):
-                    dct.update({j: jj})
+                if columns == '*':
+                    for j,jj in zip(['title', 'score', "date", 'summary', 'GPT_answer', 'Atmosphere', 'Tags', 'RecommendationsGame', 'RecommendationsBook'],i):
+                        dct.update({j: jj})
+                else:
+                    for j, jj in zip([f'{columns}'], i):
+                        dct.update({j: jj})
                 return dct
 
     def list_of_items(self):

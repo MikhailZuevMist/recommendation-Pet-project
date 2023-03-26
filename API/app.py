@@ -88,5 +88,15 @@ def delete_user(
 
 @api.get('/get_info_by_title/')
 def get_info_about_title(title: dict):
-
     return DataBase.Movies(title.get('title')).get_item_by_title()
+
+@api.get('/get_recommendation/')
+def get_recommendation(title: dict):
+    movies = DataBase.Movies(title.get('title'))
+    request = movies.get_item_by_title()
+    summary = request.get('summary')
+    atmosphere = request.get('Atmosphere')
+    list_of_movies = movies.list_of_items()
+        # js = DataBase.jaccard_similarity(summary+atmosphere, 'asf')
+
+    return {'description': list_of_movies[0][0]}
