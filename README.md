@@ -1,7 +1,7 @@
 # recommendation-Pet-project
 Проект который создается для того, чтобы получить более полное представление о жизненном цикле разработки продуктов. Моя цель вложить внего все свои знания и научиться новым навыкам.
 ![Рекоммендательная система](https://github.com/MikhailZuevMist/recommendation-Pet-project/assets/82449566/5786f3be-2b8c-4eca-b33e-9bbdc16e5e17)
-#Содержание
+# Содержание
 ## Процесс разработки
 * [Процесс бизнес-анализа](https://github.com/MikhailZuevMist/recommendation-Pet-project/blob/master/Business%20analysis/ProjectFlow.md)
 ## Документация созданная в ходе разработки
